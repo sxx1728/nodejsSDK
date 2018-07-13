@@ -14,10 +14,10 @@ const sdk = require('hcopen-sdk')
 new sdk({
     appUid: '111',
     appSecret: '222',
-}).getUserInfo.then((code) => {
-    
+}).getUserInfo(code).then(data) => {
+    console.log(data);
 }).catch((error) =>{
-
+    console.log("sdk failed");
 })
 ```
 

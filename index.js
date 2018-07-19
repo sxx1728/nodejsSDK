@@ -112,6 +112,7 @@ class SDK {
      * @param {String} opts.outTradeNo 平台单号
      * @param {String} opts.feeType 火币类型 默认ht
      * @param {String} opts.exchange 
+     * @param {String} opts.notifyUrl 
      * @param {String} opts.body 订单描述
      */
     prePay( opts ) {
@@ -123,10 +124,10 @@ class SDK {
                     timestamp: Timestamp(),
                     nonceStr: NonceStr(),
                     feeType: opts.feeType || "HT",
-                    exchange: opts.exchange || 'false',
-                    notifyUrl: _this.notifyUrl,
-                    openUid: opts.openUid,
                     totalFee: opts.totalFee,
+                    exchange: opts.exchange || 'false',
+                    notifyUrl: opts.notifyUrl,
+                    openUid: opts.openUid,
                     outTradeNo: opts.outTradeNo,
                     body: opts.body
                 };
